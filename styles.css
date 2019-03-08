@@ -1,0 +1,49 @@
+img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .masonry { /* Masonry container */
+    column-count: 3;
+    column-gap: 1em;
+}
+
+.item { /* Masonry bricks or child elements */
+    background-color: #eee;
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+}
+
+body {
+    background-image: url("/images/background.jpg");
+    background-attachment: fixed;
+  }
+
+  ul
+{
+    margin: auto;
+}
+  li {
+    float: left;
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+    font-size: 22.5px
+  }
+  h3
+  {
+    float: left;
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+  }
+  button
+  {
+      float: left;
+  }
+
+  a{
+      background-color: black;
+  }
+  

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+  <title>Smash Ultimate</title>
+</head>
+
+<body>
+  <h1>Smash Ultimate Reference (the ultimate guide to smash 4...)</h1>
+  <h2> API not working for smash ultimate :( </h2>
+  <h4>Click on a fighter to view their moves!</h4>
+  <div id="app">
+  <div v-if="loading">
+      <p>Loading...</p>
+    </div>
+    <div v-else>
+      <div v-if="mainScreen">
+      <div class=masonry>
+      <div v-for="fighterarray in fighters">
+        <div v-for="fighter in fighterarray">
+            <div class="grid-item">
+        <img v-bind:src="fighter.image" v-bind:alt="fighter.name" v-on:click="getCharData(fighter.name)">
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div v-else>
+        <button class="btn btn-primary" :style="myStyle" v-on:click="smash">Back</button>
+        <img v-bind:src="image" v-bind:alt="name">
+        <ul>
+          <H3 :style="myStyle">Moves: </H3>
+        <div v-for="move in moves">
+          <li :style="myStyle">{{move}}</li>
+        </div>
+        </ul>
+    </div>
+  </div>
+      <br><br><br><br>
+      <footer>
+          <p></p><a  href="https://github.com/jarinbj/cp3">GitHub</a></p>
+        </footer>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="/script.js"></script>
+  
+</body>
+
+</html>
