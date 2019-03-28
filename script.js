@@ -58,7 +58,7 @@ let app = new Vue({
             this.name = response.data.Name;
             this.myStyle.backgroundColor = response.data.ColorTheme;
 
-            const response2 = await axios.get(response.data.Links[1].Href);
+            const response2 = await axios.get("https://test-khapi.frannsoft.com/api/characters/name/" + name + "/moves");
             console.log(response);
 
             for(let i = 0; i < response2.data.length; i++)
