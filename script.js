@@ -20,7 +20,7 @@ let app = new Vue({
                 this.loading = true;
                 this.mainScreen = true;
                 this.fighters = [];
-                const response = await axios.get('http://beta-api-kuroganehammer.azurewebsites.net/api/characters');
+                const response = await axios.get('https://test-khapi.frannsoft.com/api/characters');
                 let i = 0;
                 let ar = [];
                 let j = 0;
@@ -52,7 +52,7 @@ let app = new Vue({
             this.loading = true;
             this.mainScreen = false;
             this.moves = [];
-            const response = await axios.get('http://beta-api-kuroganehammer.azurewebsites.net/api/characters/name/' + name);
+            const response = await axios.get('https://test-khapi.frannsoft.com/api/characters/name/' + name);
 
             this.image = response.data.MainImageUrl;
             this.name = response.data.Name;
